@@ -61,6 +61,7 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  position: fixed;
 }
 .header__title {
   font-size: var(--fs-xl);
@@ -145,7 +146,7 @@ main {
 .hero__name {
   color: var(--text-primary);
   font-size: var(--fs-hero);
-  padding-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
   font-weight: 800;
   line-height: 1.6;
 }
@@ -180,12 +181,31 @@ main {
 .hero__image-container {
   max-width: 1024px;
   max-height: 1024px;
+  overflow: hidden;
   flex-grow: 2;
   margin: auto;
+  padding: var(--space-md);
 }
 img {
   height: 90%;
-  width: 100%;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  display: block;
+  border-radius: 16px;
+  border: 3px solid transparent;
+  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899) border-box;
+  box-shadow:
+    0 10px 30px -5px rgba(99, 102, 241, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+img:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 40px -10px rgba(168, 85, 247, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset;
 }
 .about {
   display: flex;
@@ -353,8 +373,7 @@ footer {
     flex-direction: row;
     justify-content: center;
   }
-  .hero,
-  .about {
+  .hero {
     height: 100vh;
   }
   .hero__intro {
@@ -362,14 +381,15 @@ footer {
     align-items: center;
   }
   .about__content {
-    flex-wrap: wrap;
-    flex-direction: row;
+    margin: var(--space-xl) 0;
+    gap: var(--space-lg);
   }
   .about__title {
     flex-grow: 2;
-    font-size: var(--fs-lg);
+    font-size: var(--fs-xl);
   }
   .about__description {
+    max-width: 600px;
     flex-grow: 1;
     font-size: var(--fs-lg);
   }
