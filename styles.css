@@ -386,18 +386,21 @@ footer {
   }
   .about__title {
     flex-grow: 2;
-    font-size: var(--fs-xl);
+    font-size: var(--fs-lg);
   }
   .about__description {
     max-width: 600px;
     flex-grow: 1;
-    font-size: var(--fs-lg);
+    font-size: var(--fs-md);
   }
   .about__information-container {
     max-width: 800px;
     flex-grow: 3;
   }
   .information-container__element {
-    font-size: var(--fs-xl);
+    font-size: var(--fs-lg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
